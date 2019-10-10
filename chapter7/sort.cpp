@@ -27,20 +27,20 @@ int main()
 }
 void sort(int a)
 {
-	int low = 0;
+	int high = 0;
 	for (int i = 0; i < a - 1; ++i)
-	{       //finds lowest#, if not current --> swap;
-		low = i;
+	{       //finds highest#, if not current --> swap;
+		high = i;
 		for (int j = i + 1; j < a; ++j)
 		{
-			if (sortit[j] < sortit[low])
+			if (sortit[j] > sortit[high])
 			{
-				low = j;
+				high = j;
 			}
 		}
-		if (i != low)
+		if (i != high)
 		{
-			swap(&sortit[i], &sortit[low]);
+			swap(&sortit[i], &sortit[high]);
 		}
 	}
 }
