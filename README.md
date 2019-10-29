@@ -1,2 +1,2 @@
 # csprojects
-exercises from my textbook
+exercises from my textbook and also my classwork.
