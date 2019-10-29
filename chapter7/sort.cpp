@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int sortit[10];
-void sort(int a), swap(int *x, int *y);
+double sortit[10];
+void sort(int a), swap(double *x, double *y);
 
 int main()
 {
@@ -27,24 +27,25 @@ int main()
 }
 void sort(int a)
 {
-	int low = 0;
-	for (int i = 0; i < a - 1; ++i)
+	bool ordered = true;
+	for (int i = a - 1 ; i > 0; --i)
 	{       //finds lowest#, if not current --> swap;
-		low = i;
-		for (int j = i + 1; j < a; ++j)
+		ordered = true;
+		for (int j = 0; j < i; ++j)
 		{
-			if (sortit[j] < sortit[low])
+			if (sortit[j+1] < sortit[j])
 			{
-				low = j;
+				ordered = false;
+				swap(sortit[j+1], sortit[j]);
 			}
 		}
-		if (i != low)
+		if (ordered)
 		{
-			swap(&sortit[i], &sortit[low]);
+			break;
 		}
 	}
 }
-void swap(int *x, int *y)
+void swap(double *x, double *y)
 {
 	int temp = *x;
 	*x = *y;
