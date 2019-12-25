@@ -41,6 +41,40 @@ char *stringCopy(char *dest, const char *src, const max = 1200)
 	dest[i] = 0;
 	return (dest);
 }
+bool stringCompare(const char *str1, const char *str2)
+{
+	int i = 0;
+	while(str1[i] || str2[i])
+	{
+		if( str1[i] != str2[i])
+			return false;
+		++i;
+	}
+	return true;
+}
+int maxNum(const int *nums, const int size)
+{
+	if (size == 0)
+		return -1;
+	int max = nums[0];
+	for (int i = 1; i < size; ++i)
+	{
+		if(max < nums[i])
+			max = nums[i];
+	}
+	return max;
+}
+int sum(const int *sums, const int size)
+{
+	int sum = 0;
+	for (int i = 0; i < size; ++i)
+		sum += sums[i];
+	return sum;
+}
+int mean(const int *sums, const int size)
+{
+	return(sum(sums, size)/size);
+}
 
 int main()
 {

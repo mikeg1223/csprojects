@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -13,17 +14,20 @@ int main()
 	cin >> a;
 	cout << "Word 2: ";
 	cin >> b;
-	cout << mycmp(a,b);
+	cout << mycmp(a,b) << endl;
+	cout << strcmp(a, b) << endl;
 	return 0;
 }
 int mycmp(const char *str, const char *str1)
 {	
+	int m = 0;
 	for(int i = 0; str[i] && str1[i]; ++i)
 	{
-	 	if(str[i] != str1[i])
+	 	++m;
+		if(str[i] != str1[i])
 		{
 			return (str[i]-str1[i]);
 		}
 	}	
-	return 0;
+	return (str[m] - str1[m]);
 }
