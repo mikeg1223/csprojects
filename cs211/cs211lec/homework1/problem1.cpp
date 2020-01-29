@@ -6,15 +6,16 @@ void printPrimes();
 
 int main()
 {
-	
+	printPrimes();
+	return 0;
 }
 
-bool isPrime(int m)
+bool isPrime(int input)
 {
-	int x = sqrt(m)
-	for(int i = 2; i <= x; ++i)
+	int limit = sqrt(input);
+	for(int i = 2; i <= limit; ++i)
 	{
-		if(!(m%x))
+		if(!(input%i))
 		{
 			return false;
 		}
@@ -29,5 +30,11 @@ void printPrimes()
 	std::cout << "Please enter a number to print until: ";
 	std::cin >> n;
 	}
-	for(int i = 2; i <= 
+	for(int i = 2; i <= n; ++i)
+	{
+		if(isPrime(i))
+		{
+			std::cout << i << " ";
+		}
+	}
 }
