@@ -1,9 +1,11 @@
 #include <iostream>
+#include <cstring>
 
-int 
+string reverseInt(int input); 
+void printingReverse();
 
 int main()
 {
-	
-	return 0;
+
 }
+
